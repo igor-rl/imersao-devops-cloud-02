@@ -51,7 +51,7 @@ spec:
       containers:
         - name: kubenews
           # image: igorlage/kube-news:latest
-          image: igorlage/kube-news:v3
+          image: igorlage/kube-news:v4
           ports:
             - containerPort: 8080
           env:
@@ -75,4 +75,4 @@ spec:
     - port: 80
       targetPort: 8080
       nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
