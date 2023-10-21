@@ -12,18 +12,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4.1.1
     - name: Docker Login
-      uses: docker/login-action@v3.0.0
+      uses: docker/login-action@v1
       with:
-        username: ${{secrets.DOCKER_HUB_USERNAME}}
-        password: ${{secrets.DOCKER_HUB_PASSWORD}}
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      
     - name: Build and push Docker images
-      uses: docker/build-push-action@v5.0.0
+      uses: docker/build-push-action@v2
       with:
         context: ./kube-news/src
         file: ./kube-news/src/Dockerfile
         push: true
         tags: 
-          igorlage/kube-news:v${{github.run_number}}
+          igorlage/kube-news:v${{ github.run_number }}
           igorlage/kube-news:latest
 
   CD:
