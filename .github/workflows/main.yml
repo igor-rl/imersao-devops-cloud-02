@@ -17,6 +17,7 @@ jobs:
       run: echo "Executar o docker push"
   CD:
     runs-on: ubuntu-latest
+    needs: [CI]
     steps:
     - name: Autenticar na AWS
       run: echo "Autenticar na AWS"
