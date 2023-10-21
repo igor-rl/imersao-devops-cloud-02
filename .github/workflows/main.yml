@@ -23,7 +23,7 @@ jobs:
         file: ./kube-news/src/Dockerfile
         push: true
         tags: 
-          igorlage/kube-news:${{github.run_number}}
+          igorlage/kube-news:v${{github.run_number}}
           igorlage/kube-news:latest
 
   CD:
