@@ -23,9 +23,7 @@ jobs:
         context: ./kube-news/src
         file: ./kube-news/src/Dockerfile
         push: true
-        tags: 
-          igorlage/kube-news:v${{ github.run_number }}
-          igorlage/kube-news:latest
+        tags: igorlage/kube-news:v${{ github.run_number }},igorlage/kube-news:latest
 
   CD:
     runs-on: ubuntu-latest
