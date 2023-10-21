@@ -9,12 +9,23 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-    - name: Construir a imagem de container
-      run: echo "Executar o docker build"
-    - name: Efetuar o login no DockerHub
-      run: echo "Executar o docker login"
-    - name: Docker push
-      run: echo "Executar o docker push"
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+    - name: Docker Login
+      uses: docker/login-action@v3.0.0
+      with:
+        username: ${{secrets.DOCKER_HUB_USERNAME}}
+        password: ${{secrets.DOCKER_HUB_PASSWORD}}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.0.0
+      with:
+        context: ./kube-news/src
+        file: ./kube-news/src/Dockerfile
+        push: true
+        tags: 
+          igorlage/kube-news:${{github_run_number}}
+          igorlage/kube-news:latest
+
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
