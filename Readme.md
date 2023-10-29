@@ -30,19 +30,6 @@ cd imersao-devops-cloud-02
 
 3. Siga as instruções específicas no arquivo `INSTALL.md` para configurar e implantar a aplicação.
 
-## Contribuições
-
-Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença
-
-Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE.md` para obter detalhes.
-
-## Agradecimentos
-
-Um agradecimento especial a Fabrício Venonez por compartilhar seu conhecimento e experiência no mundo DevOps e Cloud!
-
-
 ## Kubernetes
 
 Comando para criar o cluster com k3d e executar a aplicação:
@@ -115,3 +102,15 @@ terraform destroy
 ```
 
 digite 'yes'
+
+## Contribuições
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE.md` para obter detalhes.
+
+## Agradecimentos
+
+Um agradecimento especial a Fabrício Venonez por compartilhar seu conhecimento e experiência no mundo DevOps e Cloud!
